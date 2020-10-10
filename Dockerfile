@@ -20,4 +20,5 @@ RUN echo "set -g mouse on" >> ~/.tmux.conf
 WORKDIR /pwn
 
 # Tmux is needed for pwntools in docker
+# Specifically, when using GDB on a running program 2 terminals are required
 CMD tmux
