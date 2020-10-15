@@ -15,7 +15,7 @@ RUN echo "source ~/peda/peda.py" >> ~/.gdbinit
 RUN gem install one_gadget
 
 RUN echo "set number\nsyntax on" >> ~/.vimrc
-RUN echo "set -g mouse on" >> ~/.tmux.conf
+# RUN echo "set -g mouse on" >> ~/.tmux.conf
 
 WORKDIR /pwn
 
