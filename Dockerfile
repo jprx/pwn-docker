@@ -17,6 +17,8 @@ RUN gem install one_gadget
 RUN echo "set number\nsyntax on" >> ~/.vimrc
 # RUN echo "set -g mouse on" >> ~/.tmux.conf
 
+COPY ./setup /usr/bin/
+
 WORKDIR /pwn
 
 # Tmux is needed for pwntools in docker
