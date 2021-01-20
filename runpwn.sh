@@ -9,5 +9,6 @@ docker run --rm -it \
 	-e "TERM=xterm-256color" \
 	-e LANG=C.UTF-8 \
 	--security-opt seccomp=unconfined \
+	--network host \
 	-e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix \
 	pwncontainer # pwncontainer = my pwn container
