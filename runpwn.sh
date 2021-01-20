@@ -6,6 +6,8 @@
 # security-opt seccomp=unconfined: So GDB can turn off ASLR
 docker run --rm -it \
 	--volume="`pwd`:/pwn:rw" \
+	-e "TERM=xterm-256color" \
 	-e LANG=C.UTF-8 \
 	--security-opt seccomp=unconfined \
+	-e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix \
 	pwncontainer # pwncontainer = my pwn container
