@@ -17,8 +17,9 @@ def main():
 
 f'''#!/usr/bin/env python3
 from pwn import *
-context.binary = exe = ELF('{sys.argv[1]}')
+context.binary = exe = ELF('./{sys.argv[1]}')
 context.kernel = context.arch
+context.terminal = ["tmux", "splitw", "-h"]
 
 rop = ROP(exe)
 
@@ -27,7 +28,7 @@ rop = ROP(exe)
 # sh += shellcraft.read(3, "rsp", 0x1000)
 # sh += shellcraft.write(1, "rsp", "rax")
 
-io = gdb.debug('{sys.argv[1]}')
+io = gdb.debug('./{sys.argv[1]}')
 
 io.interactive()
 '''

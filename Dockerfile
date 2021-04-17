@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:20.10
 
 # Some stuff borrowed from:
 # https://github.com/owlinux1000/docker_pwn/blob/master/Dockerfile
@@ -32,3 +32,4 @@ WORKDIR /pwn
 # Tmux is needed for pwntools in docker
 # Specifically, when using GDB on a running program 2 terminals are required
 CMD tmux
+# CMD /bin/bash
