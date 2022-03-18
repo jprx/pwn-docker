@@ -11,4 +11,4 @@ docker run --rm -it \
 	--security-opt seccomp=unconfined \
 	--network host \
 	-e DISPLAY=${DISPLAY} -v /tmp/.X11-unix:/tmp/.X11-unix \
-	pwncontainer # pwncontainer = my pwn container
+	sigpwncontainer # pwncontainer = my pwn container

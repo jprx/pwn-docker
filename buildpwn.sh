@@ -1,2 +1,2 @@
-docker build -t pwncontainer .
+docker build -t sigpwncontainer .
 
