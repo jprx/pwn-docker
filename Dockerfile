@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-LABEL maintainer="ravi@something.com"
+LABEL maintainer="ImFaisalKhalid"
 
 # Note: I shamelessly stole this from Ravi and modified it :)
 
@@ -58,7 +58,6 @@ RUN echo "set confirm off" >> ~/.gdbinit && \
     echo "inoremap { {}<Esc>ha\ninoremap ( ()<Esc>ha\ninoremap [ []<Esc>ha" >> ~/.vimrc && \
     echo "set -g mouse on" >> ~/.tmux.conf
  
-
 # This installs GEF for gdb support and ohmyzsh for terminal theme support (along with plugins for autosuggestion and command highlighting)
 RUN wget -O ~/.gdbinit-gef.py -q https://github.com/hugsy/gef/raw/master/gef.py && \ 
     echo source ~/.gdbinit-gef.py >> ~/.gdbinit && \
@@ -71,9 +70,9 @@ RUN wget -O ~/.gdbinit-gef.py -q https://github.com/hugsy/gef/raw/master/gef.py 
 
 # Changes theme, adds the zsh plugins, and changes prompt to add Ravi's name
 # NOTE: To change zsh theme, just change 'apple' on first line to theme of choice
-# NOTE: To change prompt (apple icon and Ravi's name), change it in second line after second echo
+# NOTE: To change prompt (apple icon and 'SIGPwny'), change it in second line after second echo
 RUN sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="apple"/' ~/.zshrc && \
-    sed -i 's/echo -n ""/echo -n " Ravi ->"/' ~/.oh-my-zsh/themes/apple.zsh-theme && \
+    sed -i 's/echo -n ""/echo -n " SIGPwny ->"/' ~/.oh-my-zsh/themes/apple.zsh-theme && \
     sed -i 's/plugins=(git)/plugins=(zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc && \
     zsh
 
